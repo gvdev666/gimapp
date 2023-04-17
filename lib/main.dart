@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'intro.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             top: 100,
             left: 20,
             child: Text(
-              'Welcome to the Future App',
+              'Bienvenido a la app de Gimnasio ',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 36,
@@ -36,7 +36,12 @@ class MyApp extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             margin: EdgeInsets.only(bottom: 20),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => WorkoutTracker()),
+                );
+              },
               child: Text('Siguiente'),
             ),
           ),

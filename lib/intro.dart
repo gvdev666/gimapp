@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'lista.dart';
 class WorkoutTracker extends StatefulWidget {
   @override
   _WorkoutTrackerState createState() => _WorkoutTrackerState();
@@ -11,7 +11,7 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Workout Tracker'),
+        title: Text('Introduccion'),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
@@ -66,8 +66,8 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                                   ),
                                   child: ListTile(
                                     leading: CircleAvatar(
-                                      backgroundImage:
-                                          AssetImage('assets/exercise_$index.jpg'),
+                                      backgroundImage: AssetImage(
+                                          'assets/exercise_$index.jpg'),
                                     ),
                                     title: Text(
                                       'Exercise ${index + 1}',
@@ -78,7 +78,12 @@ class _WorkoutTrackerState extends State<WorkoutTracker> {
                                     subtitle: Text('ir a Ejercicios'),
                                     trailing: Icon(Icons.arrow_forward_ios),
                                     onTap: () {
-                                      // Navegar al menu de ejercicios
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => const ExerciseScreen(),
+                                        ),
+                                      );
                                     },
                                   ),
                                 );
